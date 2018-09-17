@@ -24,7 +24,7 @@ namespace Acme.Biz
 
             string[] colourOptions = {"Red", "Brown", "White", "Blue"};
 
-            Console.WriteLine(colourOptions);
+            Console.WriteLine(colourOptions[1]);
         }
         public Product(int productId,
                         string productName,
