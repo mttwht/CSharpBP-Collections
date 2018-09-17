@@ -24,7 +24,13 @@ namespace Acme.Biz
 
             string[] colourOptions = {"Red", "Brown", "White", "Blue"};
 
-            Console.WriteLine(colourOptions[1]);
+            for(int i = 0 ; i < colourOptions.Length ; i++) {
+                colourOptions[i] = colourOptions[i].ToLower();
+            }
+
+            foreach(var colour in colourOptions) {
+                Console.WriteLine($"The colour is {colour}");
+            }
         }
         public Product(int productId,
                         string productName,
