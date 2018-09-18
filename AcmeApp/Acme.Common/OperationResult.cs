@@ -20,4 +20,24 @@
         public string Message { get; set; }
     }
 
+    /// <summary>
+    /// Provides a decimal amount and message 
+    /// useful as a method return type. 
+    /// </summary>
+    public class OperationResultDecimal
+    {
+        public OperationResultDecimal()
+        {
+        }
+
+        public OperationResultDecimal(decimal result, string message) : this()
+        {
+            this.Result = result;
+            this.Message = message;
+        }
+
+        public decimal Result { get; set; }
+        public string Message { get; set; }
+    }
+
 }
