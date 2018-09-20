@@ -16,13 +16,15 @@ namespace Acme.Biz
         #region Constructors
         public Product()
         {
-            var colourOptions = new List<string>();
-            colourOptions.Add("Red");
-            colourOptions.Add("Brown");
-            colourOptions.Add("White");
-            colourOptions.Add("Blue");
-            colourOptions.Insert(2, "Purple");
-            colourOptions.Remove("White");
+            //var colourOptions = new List<string>();
+            //colourOptions.Add("Red");
+            //colourOptions.Add("Brown");
+            //colourOptions.Add("White");
+            //colourOptions.Add("Blue");
+            //colourOptions.Insert(2, "Purple");
+            //colourOptions.Remove("White");
+
+            var colourOptions = new List<string>() { "Red", "Brown", "White", "Blue" };
 
             Console.WriteLine(colourOptions);
         }
