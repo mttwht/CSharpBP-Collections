@@ -42,7 +42,7 @@ namespace Acme.Biz
                 vendors.Add(new Vendor() {VendorId=1, CompanyName="ABC Corp", Email="abc@abc.com"});
                 vendors.Add(new Vendor() {VendorId=2, CompanyName="XYZ Inc", Email="xyz@xyz.com"});
             }
-            Console.WriteLine(vendors);
+            Console.WriteLine(vendors[1]);
 
             return vendors;
         }
