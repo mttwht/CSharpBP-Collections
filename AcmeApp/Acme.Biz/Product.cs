@@ -16,6 +16,7 @@ namespace Acme.Biz
         #region Constructors
         public Product()
         {
+            #region GenericList
             //var colourOptions = new List<string>();
             //colourOptions.Add("Red");
             //colourOptions.Add("Brown");
@@ -27,6 +28,13 @@ namespace Acme.Biz
             var colourOptions = new List<string>() { "Red", "Brown", "White", "Blue" };
 
             Console.WriteLine(colourOptions);
+            #endregion
+
+            var counties = new Dictionary<string, string>();
+            counties.Add("D", "Dublin");
+            counties.Add("MH", "Meath");
+            counties.Add("C", "Cork");
+            Console.WriteLine(counties);
         }
         public Product(int productId,
                         string productName,
