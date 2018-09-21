@@ -54,6 +54,20 @@ namespace Acme.Biz
             return vendors;
         }
 
+        /// <summary>
+        /// Retrieves all approved vendors
+        /// </summary>
+        /// <returns></returns>
+        public Dictionary<string, Vendor> RetrieveWithKeys()
+        {
+            var vendors = new Dictionary<string, Vendor>() {
+                {"ABC Corp", new Vendor() { VendorId = 5, CompanyName = "ABC Corp", Email = "abc@abc.com" } },
+                {"XYZ Inc", new Vendor() { VendorId = 8, CompanyName = "XYZ Inc", Email = "xyz@xyz.com" } },
+            };
+            Console.WriteLine(vendors);
+            return vendors;
+        }
+
         public T RetrieveValue<T>(string sql, T defaultValue)
         {
             // Call database to retrieve the value
