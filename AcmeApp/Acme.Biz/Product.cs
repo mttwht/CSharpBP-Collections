@@ -30,10 +30,17 @@ namespace Acme.Biz
             Console.WriteLine(colourOptions);
             #endregion
 
-            var counties = new Dictionary<string, string>();
-            counties.Add("D", "Dublin");
-            counties.Add("MH", "Meath");
-            counties.Add("C", "Cork");
+            //var counties = new Dictionary<string, string>();
+            //counties.Add("D", "Dublin");
+            //counties.Add("MH", "Meath");
+            //counties.Add("C", "Cork");
+
+            var counties = new Dictionary<string, string>() {
+                { "D", "Dublin" },
+                { "MH", "Meath" },
+                { "C", "Cork" },
+            };
+
             Console.WriteLine(counties);
         }
         public Product(int productId,
