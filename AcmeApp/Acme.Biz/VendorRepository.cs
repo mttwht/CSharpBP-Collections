@@ -58,6 +58,19 @@ namespace Acme.Biz
         /// Retrieves all approved vendors
         /// </summary>
         /// <returns></returns>
+        public Vendor[] RetrieveArray()
+        {
+            var vendors = new Vendor[2] {
+                new Vendor() {VendorId=5, CompanyName="ABC Corp", Email="abc@abc.com" },
+                new Vendor() {VendorId=8, CompanyName="XYZ Inc", Email="xyz@xyz.com" }
+            };
+            return vendors;
+        }
+
+        /// <summary>
+        /// Retrieves all approved vendors
+        /// </summary>
+        /// <returns></returns>
         public Dictionary<string, Vendor> RetrieveWithKeys()
         {
             var vendors = new Dictionary<string, Vendor>() {

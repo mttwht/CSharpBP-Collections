@@ -1,4 +1,4 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Acme.Biz;
 using System;
 using System.Collections.Generic;
@@ -82,7 +82,7 @@ namespace Acme.Biz.Tests
             var product = new Product(1, "Saw", "");
             var expected = new OperationResult<bool>(true,
                 "Order from Acme, Inc\r\nProduct: Saw\r\nQuantity: 12" +
-                "\r\nDeliver By: " + new DateTime(2018,10,25).ToString("d") +
+                "\r\nDeliver By: " + new DateTime(2018, 10, 25).ToString("d") +
                 "\r\nInstructions: standard delivery");
 
             // Act
@@ -149,6 +149,24 @@ namespace Acme.Biz.Tests
             // Arrange
             var vendorRepository = new VendorRepository();
             var vendors = vendorRepository.Retrieve();
+            var expected = new List<string>() {
+                "Message sent: Important message for: ABC Corp",
+                "Message sent: Important message for: XYZ Inc"
+            };
+
+            // Act
+            var actual = Vendor.SendEmail(vendors, "Test message");
+
+            // Assert
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void SendEmailTestArray()
+        {
+            // Arrange
+            var vendorRepository = new VendorRepository();
+            var vendors = vendorRepository.RetrieveArray();
             var expected = new List<string>() {
                 "Message sent: Important message for: ABC Corp",
                 "Message sent: Important message for: XYZ Inc"
