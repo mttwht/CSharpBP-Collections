@@ -64,14 +64,27 @@ namespace Acme.Biz
                 {"ABC Corp", new Vendor() { VendorId = 5, CompanyName = "ABC Corp", Email = "abc@abc.com" } },
                 {"XYZ Inc", new Vendor() { VendorId = 8, CompanyName = "XYZ Inc", Email = "xyz@xyz.com" } },
             };
-            Console.WriteLine(vendors["XYZ Inc"]);
 
-            if(vendors.ContainsKey("XYZ"))
-                Console.WriteLine(vendors["XYZ"]);
+            foreach(var element in vendors) {
+                var vendor = element.Value;
+                var companyName = element.Key;
+                Console.WriteLine($"Key: {companyName} Value: {vendor}");
+            }
 
-            Vendor vendor;
-            if(vendors.TryGetValue("XYZ", out vendor))
-                Console.WriteLine(vendor);
+            //foreach(var vendor in vendors.Values) {
+            //    Console.WriteLine(vendor);
+            //}
+
+            //foreach(var companyName in vendors.Keys) {
+            //    Console.WriteLine(vendors[companyName]);
+            //}
+
+            //if(vendors.ContainsKey("XYZ"))
+            //    Console.WriteLine(vendors["XYZ"]);
+
+            //Vendor vendor;
+            //if(vendors.TryGetValue("XYZ", out vendor))
+            //    Console.WriteLine(vendor);
 
             return vendors;
         }
