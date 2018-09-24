@@ -105,13 +105,23 @@ namespace Acme.Biz.Tests
 
             // Act
             var vendors = repository.RetrieveAll();
-            var vendorQuery = from v in vendors
-                              where v.CompanyName.Contains("Toy")
-                              orderby v.CompanyName
-                              select v;
+
+            //var vendorQuery = from v in vendors
+            //                  where v.CompanyName.Contains("Toy")
+            //                  orderby v.CompanyName
+            //                  select v;
+
+            var vendorQuery = vendors.Where(FilterCompanies)
+                                        .OrderBy(OrderCompaniesByName);
 
             // Assert
             CollectionAssert.AreEqual(expected, vendorQuery.ToList());
         }
+
+        private bool FilterCompanies(Vendor v) =>
+            v.CompanyName.Contains("Toy");
+
+        private string OrderCompaniesByName(Vendor v) =>
+            v.CompanyName;
     }
 }
